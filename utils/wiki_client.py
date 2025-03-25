@@ -13,18 +13,21 @@ class WikiClient:
         self.edit_token = None
 
     def login(self):
-        token_resp = self.session.get(f"{self.url}/api.php", params={
-            "action": "query", "meta": "tokens", "type": "login", "format": "json"
-        }).json()
-        login_token = token_resp["query"]["tokens"]["logintoken"]
+        try:
+            token_resp = self.session.get(f"{self.url}/api.php", params={
+                "action": "query", "meta": "tokens", "type": "login", "format": "json"
+            }).json()
+            login_token = token_resp["query"]["tokens"]["logintoken"]
 
-        login_resp = self.session.post(f"{self.url}/api.php", data={
-            "action": "login",
-            "lgname": self.username,
-            "lgpassword": self.password,
-            "lgtoken": login_token,
-            "format": "json"
-        }).json()
+            login_resp = self.session.post(f"{self.url}/api.php", data={
+                "action": "login",
+                "lgname": self.username,
+                "lgpassword": self.password,
+                "lgtoken": login_token,
+                "format": "json"
+            }).json()
+        except:
+            raise Exception("Connection error. Check your config")
         
         if login_resp.get("login", {}).get("result") != "Success":
             raise Exception("Auth error")

@@ -1,6 +1,6 @@
 import argparse
 import sys
-from scripts.replace_text import replace_text_main
+from scripts.replace_text import replace_text
 from utils.logger import setup_logger
 
 def main():
@@ -20,9 +20,11 @@ def main():
     logger = setup_logger(verbose=args.verbose, disable_logging=args.no_log)
 
     if args.command == "replace":
-        replace_text_main(args.old, args.new, args.pages)
+        replace_text(args.old, args.new, args.pages)
+    elif args.command == None:
+        parser.print_help()
     else:
-        logger.error("Unknown command! Use --help to get list of all commands")
+        logger.error(f"Unknown command `{args.command}`! Use --help to get list of all commands")
         sys.exit(1)
 
 if __name__ == "__main__":

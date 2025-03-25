@@ -18,7 +18,7 @@ def replace_text(old_text, new_text, pages=None):
     wiki.get_edit_token()
 
     for page in pages:
-        logger.info(f"Processing {page}...")
+        logger.info(f"Processing '{page}'...")
 
         content = wiki.get_page_content(page)
         if content is None:
