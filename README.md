@@ -27,6 +27,7 @@ pip install -r requirements.txt
 ```
 
 3. **Setup your configuration**
+
 To use scripts, you have to [create a bot](https://www.mediawiki.org/wiki/Manual:Bots) on your wiki.
 Fill `config.json` with your credentials:
 ```json
