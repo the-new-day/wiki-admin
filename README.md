@@ -6,7 +6,7 @@ A set of Python scripts for automating administrative tasks on a MediaWiki-based
 **Batch text replacement** – Replace text across multiple pages in one command.  
 **Bulk page deletion** – Remove multiple pages at once.  
 
-**🚧 Coming soon:**
+**🚧 Coming soon:** \
 **Mass file upload** – Upload multiple files to the wiki.  
 **Mass file deletion** – Delete multiple files from the wiki in a single command.  
 **Logging system** – Supports `--verbose` mode for console output and `--no-log` to disable logging.  
