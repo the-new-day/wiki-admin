@@ -60,5 +60,5 @@ python wiki-admin.py delete
 As you can see, you can also specify a list of pages in the argument list. If it is not in the argument list, it will be taken from `script.json`.
 
 ### ⚙ Additional Options
-`--verbose` – Enable detailed logging
-`--no-log` – Disable logging
+* `--verbose` – Enable detailed logging
+* `--no-log` – Disable logging
